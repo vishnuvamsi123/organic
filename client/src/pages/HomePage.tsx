@@ -23,10 +23,10 @@ const CATEGORY_ICONS: Record<string, string> = {
 };
 
 const BANNERS = [
-  { id: 1, image: '/banners/offer_delivery.png', title: 'Free Delivery', subtitle: 'On orders above ₹200' },
-  { id: 2, image: '/banners/offer_vegetables.png', title: 'Pure Farm Fresh', subtitle: 'Pure farm fresh vegetables' },
-  { id: 3, image: '/banners/offer_fruits.png', title: 'Luxury Orchard Fruits', subtitle: '100% natural and handpicked' },
-  { id: 4, image: '/banners/offer_grains.png', title: 'Pulses & Rice', subtitle: 'Traditional premium quality' },
+  { id: 1, image: 'banners/offer_delivery.png', title: 'Free Delivery', subtitle: 'On orders above ₹200' },
+  { id: 2, image: 'banners/offer_vegetables.png', title: 'Pure Farm Fresh', subtitle: 'Pure farm fresh vegetables' },
+  { id: 3, image: 'banners/offer_fruits.png', title: 'Luxury Orchard Fruits', subtitle: '100% natural and handpicked' },
+  { id: 4, image: 'banners/offer_grains.png', title: 'Pulses & Rice', subtitle: 'Traditional premium quality' },
 ];
 
 const SAMPLE_PRODUCTS: Product[] = [
@@ -157,7 +157,7 @@ const HomePage: React.FC = () => {
               {/* Blurred background representation of the poster */}
               {index !== 0 && (
                 <img
-                  src={banner.image}
+                  src={`${import.meta.env.BASE_URL}${banner.image}`}
                   alt=""
                   style={{
                     position: 'absolute',
@@ -174,7 +174,7 @@ const HomePage: React.FC = () => {
               
               {/* Actual poster */}
               <img
-                src={banner.image}
+                src={`${import.meta.env.BASE_URL}${banner.image}`}
                 alt={banner.title}
                 style={{
                   position: 'relative',

@@ -65,7 +65,7 @@ const LoginPage: React.FC = () => {
         color: '#fff',
         borderRight: '4px solid rgba(212, 175, 55, 0.45)',
       }}>
-        <img src="/logo.jpg" alt="Logo" style={{ width: '250px', height: '250px', borderRadius: '60px', marginBottom: '32px', border: '4px solid rgba(212,175,55,0.4)', boxShadow: '0 12px 48px rgba(0,0,0,0.35)' }} />
+        <img src={`${import.meta.env.BASE_URL}logo.jpg`} alt="Logo" style={{ width: '250px', height: '250px', borderRadius: '60px', marginBottom: '32px', border: '4px solid rgba(212,175,55,0.4)', boxShadow: '0 12px 48px rgba(0,0,0,0.35)' }} />
         <h1 style={{ fontSize: '36px', fontWeight: '800', fontFamily: 'serif', color: '#f5ebe0', marginBottom: '16px', textAlign: 'center', lineHeight: 1.2 }}>
           Farm Fresh,<br />Delivered Daily
         </h1>

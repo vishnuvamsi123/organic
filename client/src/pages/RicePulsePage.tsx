@@ -86,7 +86,7 @@ const RicePulsePage: React.FC = () => {
     <div style={{ minHeight: 'calc(100vh - 64px)', background: 'var(--color-background)' }}>
       <div style={{
         position: 'relative',
-        backgroundImage: 'linear-gradient(rgba(14, 36, 22, 0.45), rgba(14, 36, 22, 0.55)), url("/images/custom_page_bg.png")',
+        backgroundImage: `linear-gradient(rgba(14, 36, 22, 0.45), rgba(14, 36, 22, 0.55)), url("${import.meta.env.BASE_URL}images/custom_page_bg.png")`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         padding: '100px 20px',

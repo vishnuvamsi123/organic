@@ -119,7 +119,7 @@ export const Header: React.FC = () => {
           textDecoration: 'none', flexShrink: 0,
         }}>
           <img
-            src="/logo.jpg"
+            src={`${import.meta.env.BASE_URL}logo.jpg`}
             alt="Organic"
             style={{ width: '62px', height: '62px', borderRadius: '16px', objectFit: 'cover', border: '2px solid rgba(212, 175, 55, 0.5)' }}
             onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
