@@ -1,11 +1,16 @@
 // Entry point for the Organic backend server
 import 'reflect-metadata';
 import 'dotenv/config';
+import dns from 'dns';
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import { createServer } from 'http';
 import { Server as SocketIOServer } from 'socket.io';
 import { seedDatabase } from './seed';
+
+// Force Node to prefer IPv4 when resolving hostnames.
+// This prevents ENETUNREACH failures on Render (which does not support IPv6 outbound routing by default).
+dns.setDefaultResultOrder('ipv4first');
 
 // Import routes (will be added later)
 import authRouter from './routes/auth';
