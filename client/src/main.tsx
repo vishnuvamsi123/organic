@@ -7,7 +7,7 @@ import './index.css';
 // Set base URL for production API requests.
 // Replace with your live Render backend URL once backend is hosted.
 axios.defaults.baseURL = import.meta.env.PROD
-  ? 'https://organic-api-vishnu.onrender.com'
+  ? 'https://organic-api-zucq.onrender.com'
   : '';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
