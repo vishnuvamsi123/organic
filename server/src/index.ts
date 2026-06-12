@@ -1,12 +1,11 @@
 // Entry point for the Organic backend server
 import 'reflect-metadata';
 import 'dotenv/config';
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import { createServer } from 'http';
 import { Server as SocketIOServer } from 'socket.io';
 import { seedDatabase } from './seed';
-import { json } from 'body-parser';
 
 // Import routes (will be added later)
 import authRouter from './routes/auth';
@@ -19,7 +18,7 @@ import couponRouter from './routes/coupon';
 
 const app = express();
 app.use(cors());
-app.use(json());
+app.use(express.json());
 
 // Register routers
 app.use('/api/v1/auth', authRouter);
@@ -36,10 +35,10 @@ const io = new SocketIOServer(httpServer, {
 });
 
 // Simple health check
-app.get('/health', (_req, res) => {
+app.get('/health', (_req: Request, res: Response) => {
   res.json({ status: 'ok' });
 });
-app.get("/", (req, res) => {
+app.get("/", (req: Request, res: Response) => {
   res.send("Backend is running successfully 🚀");
 });
 

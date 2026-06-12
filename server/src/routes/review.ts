@@ -1,4 +1,4 @@
-import { Router, Request, Response } from 'express';
+import { Router, Request, Response, NextFunction } from 'express';
 import { authMiddleware } from '../middleware/auth';
 import { AppDataSource } from '../data-source';
 import { Review } from '../entity/Review';
@@ -8,7 +8,7 @@ import { Product } from '../entity/Product';
 
 const router = Router();
 router.use(authMiddleware);
-router.use((req, res, next) => {
+router.use((req: Request, res: Response, next: NextFunction) => {
   if ((req as any).role !== 'user') {
     return res.status(403).json({ error: 'User access required' });
   }

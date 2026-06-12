@@ -1,4 +1,4 @@
-import { Router, Request, Response } from 'express';
+import { Router, Request, Response, NextFunction } from 'express';
 import { authMiddleware } from '../middleware/auth';
 import { AppDataSource } from '../data-source';
 import { Product } from '../entity/Product';
@@ -9,7 +9,7 @@ const router = Router();
 
 // Require farmer authentication
 router.use(authMiddleware);
-router.use((req, res, next) => {
+router.use((req: Request, res: Response, next: NextFunction) => {
   if ((req as any).role !== 'farmer') {
     return res.status(403).json({ error: 'Farmer access required' });
   }
