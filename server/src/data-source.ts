@@ -21,6 +21,9 @@ export const AppDataSource = new DataSource({
         password: process.env.DB_PASSWORD ?? 'postgres',
         database: process.env.DB_NAME ?? 'organic',
       }),
+  ssl: process.env.DATABASE_URL || (process.env.DB_HOST && process.env.DB_HOST !== 'localhost')
+    ? { rejectUnauthorized: false }
+    : false,
   synchronize: true, // set false in prod & use migrations
   logging: false,
   entities: [
